@@ -6,12 +6,15 @@
 //
 
 import SwiftUI
+import ComposableArchitecture
 
 @main
 struct CryptoCraftWithTCAApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            CoinView(store: Store(initialState: CoinState(), reducer: {
+                CoinReducer()
+            }))
         }
     }
 }
